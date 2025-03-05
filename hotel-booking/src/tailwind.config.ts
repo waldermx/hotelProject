@@ -1,4 +1,5 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
+
+import  defaultTheme  from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -20,8 +21,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter var", ...fontFamily.sans],
-        display: ["Playfair Display", ...fontFamily.serif],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        display: ["Playfair Display", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -79,5 +80,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [Animation],
 }

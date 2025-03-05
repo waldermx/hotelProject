@@ -39,8 +39,12 @@ export default function ContactPage() {
                 email: "",
                 message: ""
             });
-        } catch (error) {
-            toast.error("Error. No se pudo enviar el mensaje. Inténtalo nuevamente.");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                toast.error(error.message);
+            } else {
+                toast.error("An unexpected error occurred.");
+            }
         } finally {
             setIsSubmitting(false);
         }

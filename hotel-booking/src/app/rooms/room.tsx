@@ -4,10 +4,18 @@ import Image from 'next/image';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
+interface RoomType {
+  images: string[];
+  name: string;
+  capacity: number;
+  price: number;
+  description: string;
+}
+
 export default function Room() {
   const router = useRouter();
   const { id } = router.query;
-  const [room, setRoom] = useState(null);
+  const [room, setRoom] = useState<RoomType | null>(null);
 
   useEffect(() => {
     if (id) {
