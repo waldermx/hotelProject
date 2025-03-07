@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import roomsData from "@/data/rooms.js";
 

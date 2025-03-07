@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "@/components/Footer";
 import roomsData from "@/data/rooms.js";
 
 export default function RoomsList() {
