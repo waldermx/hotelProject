@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, CheckCircle, AlertCircle } from "lucide-react";
+import { CalendarIcon, AlertCircle } from "lucide-react";
 import { format, differenceInDays, addDays } from "date-fns";
 import { es } from "date-fns/locale";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
