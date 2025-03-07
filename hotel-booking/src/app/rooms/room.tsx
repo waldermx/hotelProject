@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 
 interface RoomType {
   images: string[];
