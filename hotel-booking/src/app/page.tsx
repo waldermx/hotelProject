@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import roomsData from "@/data/rooms.js";
@@ -12,8 +11,8 @@ export default function Home() {
   const featuredRooms = roomsData.slice(0, 3);
   
   return (
-    <main>
-      <NavBar />
+    <>
+
       <HeroSection />
       
       {/* Sección de habitaciones destacadas */}
@@ -99,7 +98,6 @@ export default function Home() {
         </div>
       </section>
       
-      <Footer />
-    </main>
+    </>
   );
 }

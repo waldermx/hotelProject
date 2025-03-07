@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ContactFormData } from "@/lib/types";
 import { ToastContainer, toast } from "react-toastify";
@@ -52,7 +51,7 @@ export default function ContactPage() {
     
     return (
         <main>
-            <NavBar />
+            
             
             <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -150,7 +149,6 @@ export default function ContactPage() {
                 </div>
             </div>
             
-            <Footer />
             <ToastContainer />
         </main>
     );

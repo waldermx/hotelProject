@@ -30,7 +30,7 @@ export default function Room() {
   }
 
   return (
-    <main>
+    <>
       <NavBar />
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="border rounded-lg overflow-hidden shadow-lg">
@@ -52,7 +52,6 @@ export default function Room() {
           </div>
         </div>
       </div>
-      <Footer />
-    </main>
+    </>
   );
 }

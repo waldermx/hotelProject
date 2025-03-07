@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import roomsData from "@/data/rooms.js";
 
 export default function RoomsList() {
   return (
-    <main>
-      <NavBar />
+    <>
+
       
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold mb-8">Nuestras Habitaciones</h1>
@@ -36,7 +35,6 @@ export default function RoomsList() {
         </div>
       </div>
       
-      <Footer />
-    </main>
+    </>
   );
 }
