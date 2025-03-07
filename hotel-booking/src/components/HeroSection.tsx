@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import DateRangePicker from "./DateRangePicker";
 import { DateRange } from "@/lib/types";
+import { UserIcon } from "lucide-react";
 
 export default function HeroSection() {
   const router = useRouter();
+  // Inicializar con fechas por defecto
   const [dateRange, setDateRange] = useState<DateRange>({
     startDate: new Date(),
     endDate: new Date(new Date().setDate(new Date().getDate() + 1)),
@@ -45,24 +47,36 @@ export default function HeroSection() {
         <div className="mt-8 w-full max-w-4xl bg-white rounded-lg shadow-lg p-4">
           <div className="grid grid-cols-1 md:grid-cols-7 gap-4 items-center">
             <div className="md:col-span-5">
-              <DateRangePicker onChange={setDateRange} initialRange={dateRange} />
+              <DateRangePicker 
+                onChange={(range) => {
+                  console.log("Fecha seleccionada:", range);
+                  setDateRange(range);
+                }} 
+                initialRange={dateRange} 
+              />
             </div>
             <div className="md:col-span-1">
               <Select value={guests} onValueChange={setGuests}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Huéspedes" />
+                <SelectTrigger className="w-full h-[52px]">
+                  <div className="flex items-center">
+                    <UserIcon className="h-4 w-4 mr-2" />
+                    <SelectValue placeholder="Huéspedes" />
+                  </div>
                 </SelectTrigger>
                 <SelectContent>
-                  {[1, 2, 3, 4, 5, 6].map((num) => (
-                    <SelectItem key={num} value={num.toString()}>
-                      {num} {num === 1 ? "Huésped" : "Huéspedes"}
-                    </SelectItem>
-                  ))}
+                  <div className="py-2">
+                    <div className="px-2 pb-2 text-sm font-medium text-gray-500">Huéspedes</div>
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <SelectItem key={num} value={num.toString()}>
+                        {num} {num === 1 ? "Huésped" : "Huéspedes"}
+                      </SelectItem>
+                    ))}
+                  </div>
                 </SelectContent>
               </Select>
             </div>
             <div className="md:col-span-1">
-              <Button onClick={handleSearch} className="w-full">
+              <Button onClick={handleSearch} className="w-full h-[52px]" size="lg">
                 Buscar
               </Button>
             </div>
